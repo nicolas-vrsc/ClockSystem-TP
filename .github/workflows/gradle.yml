@@ -14,7 +14,7 @@ on:
     branches: [ "main" ]
 
 env:
-  DISPLAY: ":99.0" 
+  DISPLAY: ":99.0"
 
 jobs: 
   build:
@@ -36,7 +36,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Start Xvfb
-      run: Xvfb $DISPLAY-ac-screen 0 1600x1200x24 > /dev/null 2>&1 &
+      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
