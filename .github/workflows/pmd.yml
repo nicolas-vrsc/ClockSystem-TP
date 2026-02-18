@@ -15,7 +15,10 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-      - name: PMD
-        uses: pmd/pmd-github-action@v2.0.0
+      - uses: pmd/pmd-github-action@v2.0.0
+        id : pmd
         with:
           rulesets: 'category/java/errorprone.xml'
+      - name: Fail build if there are violations
+        if: steps.pmd.outputs.violations > 20
+        run: exit 1
