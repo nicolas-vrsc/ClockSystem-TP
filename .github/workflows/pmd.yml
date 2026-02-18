@@ -20,7 +20,9 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-      - uses: pmd/pmd-github-action@v2.0.0
+      - name: Run analysis
+        id: pmd
+        uses: pmd/pmd-github-action@v2.0.0
         with:
           rulesets: 'category/java/errorprone.xml'
           analyzeModifiedFilesOnly: 'false'
