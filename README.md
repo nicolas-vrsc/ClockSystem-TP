@@ -1,4 +1,5 @@
 ![example workflow](https://github.com/nicolas-vrsc/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)
+![Code quality analysis](https://github.com/nicolas-vrsc/ClockSystem-TP/actions/workflows/pmd.yml/badge.svg)
 
 # ClockSystem
 
