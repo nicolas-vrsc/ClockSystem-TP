@@ -6,8 +6,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
-  pmd:
+  pmd-analysis:
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -17,7 +20,9 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-      - uses: pmd/pmd-github-action@v2.0.0
+      - name: Code quality analysis
+        id : pmd
+        uses: pmd/pmd-github-action@v2.0.0
         with:
           rulesets: 'category/java/errorprone.xml'
       - name: Fail build if there are violations
