@@ -63,7 +63,7 @@ jobs:
     #   run: gradle build
 
     - name: Publish test report
-      uses: actions/upload-artifact@v6.0.0
+      uses: actions/upload-artifact@v7.0.0
       with:
         path: app/build/reports/tests
       
